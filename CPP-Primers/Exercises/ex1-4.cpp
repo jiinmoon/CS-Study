@@ -1,12 +1,12 @@
 /*
  * =====================================================================================
  *
- *       Filename:  prog1.cpp
+ *       Filename:  ex1-4.cpp
  *
- *    Description:  Sample Program. 
+ *    Description:  
  *
  *        Version:  1.0
- *        Created:  01/22/2021 06:06:44 PM
+ *        Created:  01/25/2021 07:03:27 PM
  *       Revision:  none
  *       Compiler:  gcc
  *
@@ -22,7 +22,14 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello, world!" << endl;
+    cout << "Enter Two Values" << endl;
+
+    int v1 = 0, v2 = 0;
+
+    cin >> v1 >> v2;
+
+    cout << v1 << " * " << v2 << " = " << v1 * v2 << endl;
 
     return 0;
 }
+
