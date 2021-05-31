@@ -1,0 +1,1 @@
+/Users/francisco.moon/Codes/CS-Study/Rust-Primers/Rust-Programming-Language/example_04/target/debug/example_04: /Users/francisco.moon/Codes/CS-Study/Rust-Primers/Rust-Programming-Language/example_04/src/main.rs

@@ -18,7 +18,8 @@ Notes on lectures found on `https://www.udemy.com/course/rust-lang/`.
 https://www.rust-lang.org/tools/install
 ```
 
-Automatically sets-up the env changes.
+Automatically sets-up the env changes. Alternatively, use a package manager
+such as `brew`.
 
 ## "Hello, Rust!"
 
