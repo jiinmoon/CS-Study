@@ -1,9 +1,8 @@
-# Data Structures
+#![allow(dead_code)]
 
-## `struct` structures
+use std::mem;
 
-```rust
-struct Point {
+struct Point {
     x: i32,
     y: i32
 }
@@ -20,14 +19,6 @@ fn structures() {
     println!("p1 is at ({}, {})", p2.x, p1.y);
 }
 
-fn main() {
-    structures();
-}
-```
-
-## `enum` structures
-
-```rust
 enum Color {
     R, G, B,
     RGBColor(u8, u8, u8),   // tuple
@@ -50,19 +41,7 @@ fn enumerations() {
         _ => println!("Invalid")
     }
 }
-```
 
-## `union` structures
-
-Just like from C, `union` is a structure that allocates in the memory - but we
-do not specify exactly what type is to be stored within; hence it is flexible
-to use.
-
-Problem is that if union is given, we do not know what is stored within. 
-
-This is mostly for compatibility issue with C and C++ codes.
-
-```rust
 union Number {
     i: i32,
     f: f32
@@ -97,18 +76,10 @@ fn unions() {
     identify_value(num);
     identify_value(Number {i : 7});
 }
-```
 
-## `Option<T>`
-
-Option is checking to see whether some operation has succeeded.
-
-For example, following will check for whether denominator is 0:
-
-```rust
 fn options() {
     let x = 3.14;
-    let y = 0.0;
+    let y = 2.0;
 
     // Option -> Some(V) | None
     let result =
@@ -124,15 +95,8 @@ fn options() {
     if let Some(z) = result {
         println!("result = {}", z);
     }
-
 }
-```
 
-Particularly useful when we return a value from a function.
-
-## Arrays
-
-```rust
 fn arrays() {
     // array is a data structure where you know the size beforehand
     let mut arr1:[i32;5] = [1, 2, 3, 4, 5];
@@ -173,22 +137,13 @@ fn arrays() {
         }
     }
 }
-```
 
-Note that array is not resizable; will have to create a new array.
-
-## Slices
-
-Slices is like an array - but compiler will not know the size of the array
-beforehand. Think of it as a Python slices - but you are working with the
-original array.
-
-```rust
 // notice how slice can be mutable
 fn use_slice(slice: &mut[i32]) {
     slice[0] = 10;
     println!("slice is : {:?}", slice);
 }
+
 fn slices() {
     let mut arr = [1,2,3,4,5];
 
@@ -198,11 +153,7 @@ fn slices() {
     use_slice(&mut arr);
     println!("{:?}", arr);
 }
-```
 
-## Tuples
-
-```rust
 // this functions returns a tuple
 // unlike array, the types can be mismatched
 fn sum_and_product(x: i32, y: i32) -> (i32, f64) {
@@ -226,11 +177,7 @@ fn tuples() {
     let result3 = (result, result2);
     println!("{:?} {}", result3, (result3.1).1);
 }
-```
 
-## Pattern Matching
-
-```rust
 fn fizzBuzz(i: i32) -> &'static str {
     let x = i % 3;
     let y = i % 5;
@@ -247,11 +194,7 @@ fn pattern_matching() {
         println!("{} : {}", i, fizzBuzz(i));
     }
 }
-```
 
-## Generics
-
-```rust
 // point in 3 dimensions (x, y, z)
 // but x, y, z can be of any type (Option<T>)
 struct Point3D<T> {
@@ -287,5 +230,15 @@ fn generics() {
         end: point2
     };
 }
-```
 
+fn main() {
+    //structures();
+    //enumerations();
+    //unions();
+    //options();
+    //arrays();
+    //slices();
+    //tuples();
+    //pattern_matching();
+    generics();
+}
