@@ -1,3 +1,8 @@
+# Functions
+
+## `fn`
+
+```rust
 fn print_value(x: i32) {
     println!("Passed in value is {}", x);
 }
@@ -24,7 +29,13 @@ fn functions() {
     let result = product(y, z);
     println!("{} * {} = {}", y, z, result);
 }
+```
 
+## Methods
+
+Methods are way to invoke/implement functions for `structs`.
+
+```rust
 use std::num;
 
 struct Point {
@@ -54,7 +65,11 @@ fn methods() {
 
     println!("Length of line is {}.", line1.len());
 }
+```
 
+## Closures
+
+```rust
 // functions are first class citizens
 fn closures() {
     let add_one = increment_by_one;
@@ -72,15 +87,13 @@ fn closures() {
     plus_two(&mut x);
     println!("{}", x)
 }
+```
 
-fn check_range(lim: i32) -> impl Fn(i32) -> bool {
-    move |x| x < lim
-}
+## Higher Order Functions
 
-fn is_even(x:i32) -> bool {
-    return x % 2 == 0;
-}
+Functions that can take/return functions.
 
+```rust
 fn higher_functions() {
     // sum of all even squares < 1000
     let mut result = 0;
@@ -102,10 +115,4 @@ fn higher_functions() {
         .sum();
     println!("Result : {}", result2);
 }
-
-fn main() {
-    //functions();
-    //methods();
-    //closures();
-    higher_functions();
-}
+```
