@@ -131,3 +131,80 @@ fn say_hello()
 }
 ```
 
+## Variables (Assignments)
+
+```rust
+/* Variables
+ * 
+ * Variables hold primitive data or "refereces" to data.
+ * In Rust, variables are "immutable" by default.
+ * 
+ * Note that Rust is block scoped and block is defined by "{...}".
+ */
+pub fn run() 
+{
+    let name = "John";
+    let age = 29;
+    // following will be an error: cannot assign to immutable var
+    //age = 30;
+    println!("{} is {} years old.", name, age);
+
+    // "mut" keyword makes the variable as mutable
+    let mut mutable_age = 30;
+    mutable_age = 99;
+    println!("{} is {} years old.", name, mutable_age);
+
+    // we may also define constant variables
+    // compiler will simply replace all const vars with that value on compile time
+    // note that you have to specify type for the const
+    const PI: f32 = 3.14;
+    println!("PI = {}", PI);
+
+    // multiple assignment in single line
+    let (dog_name, dog_age) = ("Luke", 12);
+    println!("{} is a good dog and is {} years old.", dog_name, dog_age);
+}
+```
+
+## Data Types
+
+__refer to `types.rs`__.
+
+## String
+
+__refer to `string.rs`__.
+
+## Typical Collections: Tuples, Arrays, Vectors
+
+__refer to `array.rs`__.
+
+## Conditionals
+
+__refer to `conditionals.rs`__.
+
+Also, it is possible to evaluate statements such as `let` or `match` as well -
+which will return bool depending on the outcome.
+
+## Looping
+
+__refer to `loops.rs`__.
+
+## Functions
+
+__refer to `functions.rs`__.
+
+## Pointers & References
+
+__refer to `pointer_ref.rs`__.
+
+## Structs
+
+__refer to `structs.rs`__.
+
+## Enums
+
+__refer to `enums.rs`__.
+
+## Cli
+
+__refer to `cli.rs`__.
