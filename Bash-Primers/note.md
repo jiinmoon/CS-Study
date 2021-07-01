@@ -782,3 +782,23 @@ $DEBUG || echo "And it indeed is."
 - one file to another via redirect `>` or `<`.
 - one device to another.
 
+i.e. STDIN = Standard Input Stream
+
+Streams are usually textual data.
+
+## what is `sed` for?
+
+`sed` performs text transformations on the streams. For example,
+
+- substitue some text for other text.
+- remove lines.
+- append text after given lines.
+- insert text before certain lines.
+
+`man sed`
+
+Simple usage is search and replace...
+
+`$ sed 's/<pattern>/<replacement>/' <file_name>`
+
+Above will takes in the file, find all matching patterns and replace it and spit out in the STDOUT; but will not modify existing file.
